@@ -1,131 +1,469 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# GeekTide
 
-Welcome USER_NAME,
+## Introduction
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![screenshot](documentation/readme/am-i-responsive.png)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+### [GeekTide Live](https://geektide-0cf26c16beb0.herokuapp.com/)
 
-## Gitpod Reminders
+## About us
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+DevTide is an innovative web platform designed to be your comprehensive hub for all IT-related content. Here, you can easily find up-to-date information on a wide range of IT topics, including the latest trends, best practices, and important updates. The platform offers users the ability to post and discuss technology news, share their own research and discoveries, and stay informed about the latest events and trends in the industry.
 
-`python3 -m http.server`
+## Content:
 
-A blue button should appear to click: _Make Public_,
+- ### Project: Managment & Goals
+  - [Project Goals](#project-goals)
+  - [Audience](#audience)
+  - [Agile Methodology](#agile-methodology)
+  - [User Stories](#user-stories)
 
-Another blue button should appear to click: _Open Browser_.
+- ### Design & Features
+  - [Wireframes](#wireframes)
+  - [Features](#features)
+  - [Database Schema](#database-schema)
+  - [Colour Schema](#colour-schema)
+  - [Images](#images)
+  - [Typography](#typography)
+  
+- ### Testing & Deployment
+  - [Testing](#testing)
+  - [Deployment](#deployment)
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+- ### Credits & Acknowledgements
+  - [Credits](#credits)
+    - [Languages used](#languages-used)
+    - [Software](#)
+    - [Education](#)
+  - [Acknowledgements](#acknowledgments)
 
-A blue button should appear to click: _Make Public_,
+## Project Goals
 
-Another blue button should appear to click: _Open Browser_.
+The purpose of GeekTide is to offer dynamic platform for its users, owners, and administrators by offering a space for knowledge sharing, news updates, and resource discovery in the IT field.
+  
+  ### User Goals
+  - **Access to Information:** Provide users with easy access to a wide range of IT-related content
+  - **Community:** Enable users to actively participate in discussions, share their insights, ask questions, and contribute valuable content to the platform.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  ### Owner Goals
+  - **Innovation:** Continuously improve and innovate the platform by introducing new features, enhancing user experience, and staying current with industry trends.
+  - **Monetization:** Develop strategies for monetizing the platform (e.g., through ads, premium features, partnerships) while maintaining a user-friendly experience and ensuring the long-term sustainability of the project.
 
-To log into the Heroku toolbelt CLI:
+  ### Admin Goals
+  - **Community Moderation:** Maintain a positive and productive environment by moderating discussions, ensuring that all users behave as expected
+  - **Content Management:** Oversee all the content, ensuring that it is properly categorized, up-to-date, and accessible to users.
+  - **User Support:** Provide timely support to users, addressing any technical issues, answering questions, and ensuring a smooth experience on the platform.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+[Go upwards ⇧](#content)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
 
-### Connecting your Mongo database
+## Audience
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+GeekTide is for anyone passionate about technology, whether you're a professional or just starting out. Our platform is designed for:
 
-------
+- **Developers:** Get the latest news, find helpful resources, and download free software to improve your coding skills and productivity.
+- **IT Enthusiasts:** Stay updated on tech trends, share your knowledge, and connect with like-minded people in the community.
+- **Students & Learners:** Access a wealth of information to support your studies, learn new skills, and explore the world of technology.
 
-## Release History
+[Go upwards ⇧](#content)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Agile Methodology
 
-**June 18, 2024,** Add Mongo back into template
+### MoSCoW prioritization
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+In development process, I followed Agile principles to ensure flexibility and continuous improvement. I used the MoSCoW method to prioritize features and tasks. This method helped me to focus on what’s most important.
 
-**May 28 2024:** Fix Mongo and Links installs
+| Priority Level   | Description                                                                                           |
+| ---------------- | ----------------------------------------------------------------------------------------------------- |
+| **Must Have**    | Essential features that are critical for the platform's core functionality and success.                |
+| **Should Have**  | Important features that add significant value but can be delayed if necessary without major impact.    |
+| **Could Have**   | Nice-to-have features that enhance the user experience but are not essential for the initial launch.    |
+| **Won't Have**   | Features that are either not needed for this phase or have been deprioritized for future consideration. |
 
-**April 26 2024:** Update node version to 16
+<hr>
 
-**September 20 2023:** Update Python version to 3.9.17.
+### GitHub Projects
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+I used GitHub Projects to organize and track my development progress. This helped me to manage tasks, prioritize work, and stay on schedule. My project board is divided into columns, such as "To Do", "In Progress", "Done", and "Won`t have" allowing me to visualize the workflow and ensure that nothing is left behind.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+<details>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![screenshot](documentation/readme/github_projects.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+**<summary>GitHub Projects Image</summary>**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+</details>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+<br>
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+[Go upwards ⇧](#content)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+<hr>
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### User Stories
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+|Epic <br> Id | Epic name                  | User <br> Story <br> Id | User Story name               |
+|-------------|----------------------------|-------------------------|-----------------------------------------|
+| #2          | User Authentication        | #3                      | Account Creation                        |         
+| #2          | User Authentication        | #4                      | Login                                   |         
+| #2          | User Authentication        | #5                      | Password Reset                          |
+| #2          | User Authentication        | #6                      | Log out                                 |
+| #7          | Profile Management         | #8                      | Profile Picture                         |
+| #7          | Profile Management         | #9                      | Profile Username                        |
+| #7          | Profile Management         | #10                     | Profile Personal Details                |
+| #7          | Profile Management         | #11                     | Profile Delete                          |
+| #7          | Profile Management         | #12                     | Profile Password Change                 |
+| #13         | Content Discovery          | #14                     | Content Scroll Lane                     |   
+| #13         | Content Discovery          | #15                     | Content Search Bar                      |
+| #13         | Content Discovery          | #16                     | Content Sorting                         |
+| #13         | Content Discovery          | #17                     |  Bookmark                               |
+| #13         | Content Discovery          | #18                     | Adaptive Navigation Sidebar             |
+| #13         | Content Discovery          | #19                     | Logo Leading to Home Page               |
+| #20         | Community Engagement       | #21                     | Posting Content                         | 
+| #20         | Community Engagement       | #22                     | Comments                                |
+| #20         | Community Engagement       | #23                     | Post/Comment Score System               |
+| #20         | Community Engagement       | #24                     | Report System                           |
+| #20         | Community Engagement       | #25                     | Private Messages                        |
+| #20         | Community Engagement       | #26                     | Groups/Communities                      |
+| #27         | Admin Tools                | #28                     | Reported Content                        |
+| #27         | Admin Tools                | #29                     | Comment/Post Deleting                   |
+| #27         | Admin Tools                | #30                     | User Support Chat                       |
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+[Go upwards ⇧](#content)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Wireframes
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The wireframes for this project were created to provide a clear visual representation of the website’s layout and structure before the development phase began. Each wireframe focuses on the user interface (UI) and shows how the content and interactive elements are organized across different pages.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+<details>
 
-## FAQ about the uptime script
+**<summary>Wireframe for small devices</summary>**
 
-**Why have you added this script?**
+![screenshot](documentation/readme/wireframe-small.png)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+</details>
 
-**How will this affect me?**
+<details>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+**<summary>Wireframe for bigger devices</summary>**
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![screenshot](documentation/readme/wireframe-big.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+</details>
 
-**So….?**
+[Go upwards ⇧](#content)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Features
 
-**Can I opt out?**
+This project includes several features to make it easy and fun for users to interact with content. Here are the main features:
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+<details>
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+**<summary>Logo</summary>**
 
-**Anything more?**
+![screenshot](documentation/readme/features-logo.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+</details>
 
----
 
-Happy coding!
+<details>
+
+**<summary>Profile Icon</summary>**
+
+![screenshot](documentation/readme/features-profile-icon.png)
+
+</details>
+
+
+<details>
+
+**<summary>Profile Avatar</summary>**
+
+![screenshot](documentation/readme/features-profile-avatar.png)
+
+</details>
+
+
+<details>
+
+**<summary>Profile</summary>**
+
+![screenshot](documentation/readme/features-profile.png)
+
+</details>
+
+
+<details>
+
+**<summary>Edit Profile Button</summary>**
+
+![screenshot](documentation/readme/features-edit-profile-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Log Out Button</summary>**
+
+![screenshot](documentation/readme/features-log-out-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Delete Account Button</summary>**
+
+![screenshot](documentation/readme/features-delete-account-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Sidebar | not loged in</summary>**
+
+![screenshot](documentation/readme/features-sidebar-not-loged-in.png)
+
+</details>
+
+
+<details>
+
+**<summary>Edit Profile Form</summary>**
+
+![screenshot](documentation/readme/features-edit-profile-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Log In Form</summary>**
+
+![screenshot](documentation/readme/features-log-in-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Registration Form</summary>**
+
+![screenshot](documentation/readme/features-registration-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Profile Icon</summary>**
+
+![screenshot](documentation/readme/features-profile-icon.png)
+
+</details>
+
+
+<details>
+
+**<summary>Create Post Button</summary>**
+
+![screenshot](documentation/readme/features-create-post-button.png)
+
+</details>
+
+
+<details>
+
+**<summary>Create Post Form</summary>**
+
+![screenshot](documentation/readme/features-create-post-form.png)
+
+</details>
+
+
+<details>
+
+**<summary>Post</summary>**
+
+![screenshot](documentation/readme/features-post.png)
+
+</details>
+
+
+<details>
+
+**<summary>Post Details Page</summary>**
+
+![screenshot](documentation/readme/features-post-details-page.png)
+
+</details>
+
+
+<details>
+
+**<summary>Comment</summary>**
+
+![screenshot](documentation/readme/features-comment.png)
+
+</details>
+
+[Go upwards ⇧](#content)
+
+## Database Schema
+
+The database schema for this project is designed to efficiently store and manage the data related to posts, users, and interactions on the platform. The schema follows a relational database model
+
+<details>
+
+**<summary>Database Schema</summary>**
+
+![screenshot](documentation/readme/database-schema.png)
+
+</details>
+
+[Go upwards ⇧](#content)
+
+## Colour Schema
+
+[Coolors](https://coolors.co) was used to create colour palette. The design of the application follows a modern and minimalistic color scheme, using a combination of dark and light shades to create a visually appealing and user-friendly interface. The primary colors used throughout the application are:
+
+![screenshot](documentation/readme/geektide-color-schema.png)
+
+These colors were chosen to create a clean and professional look while maintaining good readability and accessibility across different devices and screen sizes.
+
+[Go upwards ⇧](#content)
+
+## Images
+
+All images used in this application have been sourced from [Pinterest](https://ie.pinterest.com/) They have been selected to complement the overall design and aesthetic of the project, providing visual context and enhancing the user experience.
+
+[Go upwards ⇧](#content)
+
+## Typography
+
+The application uses a combination of the following fonts to create a clean and modern look:
+
+- **Open Sans:** This sans-serif font is the primary typeface used throughout the site for its readability and contemporary feel. It is employed for most of the body text and user interface elements.
+
+- **Arial:** As a widely available and versatile sans-serif font, Arial is used as a fallback for text elements when Open Sans is not available.
+
+- **Sans-serif:** A general sans-serif font family is used as a fallback to ensure text remains legible and consistent across different devices and browsers.
+
+These fonts were chosen to maintain clarity, readability, and a cohesive design aesthetic across the application.
+
+[Go upwards ⇧](#content)
+
+## Testing
+
+Testing documentation can be found [here.](./TESTING.md)
+
+[Go upwards ⇧](#content)
+
+## Deployment
+
+<details>
+
+**<summary>Deploying on Heroku</summary>**
+
+1. Create a Heroku account.
+2. Sign up with a student account for credits. (optional)
+3. Once logged in, select create a new app.
+4. Select an app name and region.
+5. Select deployment method as connect to github.
+6. Find the desired repo.
+7. Enable automatic deploys and select the main branch
+8. In the settings tab select reveal config vars. Input the required hidden variables.
+9. Select nodejs and python as the buildpack.
+10. Deploy.
+
+</details>
+
+<details>
+
+**<summary>Fork The Repository</summary>**
+
+1. Go to the GitHub repository
+2. Click on Fork button in the upper right-hand corner
+3. Edit the repository name and description if desired
+4. Click the green create fork button
+
+</details>
+
+<details>
+
+**<summary>Clone The Repository</summary>**
+
+1. Go to the GitHub repository
+2. Locate the green Code button above the list of files and click it
+3. Select if you prefer to clone using HTTPS, SSH, or Github CLI and click the copy button to copy the URL to your clipboard
+4. Open Git Bash
+5. Change the current working directory to the one where you want the cloned directory
+6. Type git clone and paste the URL from the clipboard ($ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+7. Press Enter to create your local clone.
+
+</details>
+
+<details>
+
+**<summary>Run The Repository Locally</summary>**
+
+1. Go to the GitHub repository
+2. Locate the green Code button above the list of files and click it
+3. From the dropdown menu select download Zip.
+4. Download and open the zip file to run in an editor
+5. Create an env.py file and input the environment variables
+6. Ensure [PostgreSQL](https://www.postgresql.org/) is install on your computer and ports are open
+7. Create a virtual environment for installing the python modules in the pip file.
+8. Run python3 makemigrations, migrate and runserver
+
+</details>
+<br>
+
+[Go upwards ⇧](#content)
+
+## Credits
+
+### Languages used
+
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **Python**
+- **Django**
+
+### Software
+
+For this project, I utilized a variety of software tools and services, including:
+
+- [**Visual Studio Code:**](https://code.visualstudio.com/) My primary code editor, which offers powerful features and extensions for efficient development.
+- [**Balsamiq:**](https://balsamiq.com/) A wireframing tool that helped in designing and planning the layout of the application.
+- [**GitHub:**](https://github.com/) Used for version control and collaboration, enabling me to track changes and manage the project effectively.
+- [**Google Icons:**](https://fonts.google.com/icons) For integrating visually appealing icons that enhance the user interface.
+- [**W3C HTML Validator:**](https://validator.w3.org/) A tool for checking the HTML code for errors and ensuring standards compliance.
+- [**W3C CSS Validator:**](https://jigsaw.w3.org/css-validator/) Used to validate the CSS code for best practices and standards adherence.
+- [**Heroku:**](https://dashboard.heroku.com/apps) A cloud platform for deploying the application, providing easy scalability and management.
+- [**PostgreSQL:**](https://www.postgresql.org/) A powerful relational database used to store and manage application data.
+
+### Education 
+
+To develop this project, I utilized various resources, including:
+
+- [**YouTube:**](https://www.youtube.com/) For tutorials and walkthroughs on Django and front-end development.
+- [**ChatGPT:**](https://chatgpt.com/) For answering questions and website content.
+- [**Google:**](https://www.google.com/) For searching documentation, guides, and troubleshooting tips.
+- [**Django Documentation:**](https://docs.djangoproject.com/en/5.1/) The official Django documentation provided in-depth insights and best practices.
+- [**MDN Web Docs:**](https://developer.mozilla.org/en-US/) For web development resources and best practices in HTML, CSS, and JavaScript.
+- [**W3Schools:**](https://www.w3schools.com/) For quick references and tutorials on web technologies.
+- [**CSS-Tricks:**](https://css-tricks.com/) For tips and tricks related to CSS and front-end design.
+- [**GitHub:**](https://github.com/) For exploring open-source projects and finding inspiration for my own code.
+
+[Go upwards ⇧](#content)
+
+## Acknowledgments
+
+- I would like to thanks my facilitator Marko, for daily stand ups, and for helping me to resolve my code issues 
+
+[Go upwards ⇧](#content)
