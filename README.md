@@ -1,14 +1,12 @@
-# GeekTide
+# PizzaSlice
 
 ## Introduction
 
 ![screenshot](documentation/readme/am-i-responsive.png)
 
-### [GeekTide Live](https://geektide-0cf26c16beb0.herokuapp.com/)
+### [PizzaSlice Live]()
 
 ## About us
-
-DevTide is an innovative web platform designed to be your comprehensive hub for all IT-related content. Here, you can easily find up-to-date information on a wide range of IT topics, including the latest trends, best practices, and important updates. The platform offers users the ability to post and discuss technology news, share their own research and discoveries, and stay informed about the latest events and trends in the industry.
 
 ## Content:
 
@@ -39,31 +37,17 @@ DevTide is an innovative web platform designed to be your comprehensive hub for 
 
 ## Project Goals
 
-The purpose of GeekTide is to offer dynamic platform for its users, owners, and administrators by offering a space for knowledge sharing, news updates, and resource discovery in the IT field.
-  
   ### User Goals
-  - **Access to Information:** Provide users with easy access to a wide range of IT-related content
-  - **Community:** Enable users to actively participate in discussions, share their insights, ask questions, and contribute valuable content to the platform.
 
   ### Owner Goals
-  - **Innovation:** Continuously improve and innovate the platform by introducing new features, enhancing user experience, and staying current with industry trends.
-  - **Monetization:** Develop strategies for monetizing the platform (e.g., through ads, premium features, partnerships) while maintaining a user-friendly experience and ensuring the long-term sustainability of the project.
 
   ### Admin Goals
-  - **Community Moderation:** Maintain a positive and productive environment by moderating discussions, ensuring that all users behave as expected
-  - **Content Management:** Oversee all the content, ensuring that it is properly categorized, up-to-date, and accessible to users.
-  - **User Support:** Provide timely support to users, addressing any technical issues, answering questions, and ensuring a smooth experience on the platform.
+
 
 [Go upwards ⇧](#content)
 
 
 ## Audience
-
-GeekTide is for anyone passionate about technology, whether you're a professional or just starting out. Our platform is designed for:
-
-- **Developers:** Get the latest news, find helpful resources, and download free software to improve your coding skills and productivity.
-- **IT Enthusiasts:** Stay updated on tech trends, share your knowledge, and connect with like-minded people in the community.
-- **Students & Learners:** Access a wealth of information to support your studies, learn new skills, and explore the world of technology.
 
 [Go upwards ⇧](#content)
 
@@ -102,32 +86,9 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 ### User Stories
 
-|Epic <br> Id | Epic name                  | User <br> Story <br> Id | User Story name               |
-|-------------|----------------------------|-------------------------|-----------------------------------------|
-| #2          | User Authentication        | #3                      | Account Creation                        |         
-| #2          | User Authentication        | #4                      | Login                                   |         
-| #2          | User Authentication        | #5                      | Password Reset                          |
-| #2          | User Authentication        | #6                      | Log out                                 |
-| #7          | Profile Management         | #8                      | Profile Picture                         |
-| #7          | Profile Management         | #9                      | Profile Username                        |
-| #7          | Profile Management         | #10                     | Profile Personal Details                |
-| #7          | Profile Management         | #11                     | Profile Delete                          |
-| #7          | Profile Management         | #12                     | Profile Password Change                 |
-| #13         | Content Discovery          | #14                     | Content Scroll Lane                     |   
-| #13         | Content Discovery          | #15                     | Content Search Bar                      |
-| #13         | Content Discovery          | #16                     | Content Sorting                         |
-| #13         | Content Discovery          | #17                     |  Bookmark                               |
-| #13         | Content Discovery          | #18                     | Adaptive Navigation Sidebar             |
-| #13         | Content Discovery          | #19                     | Logo Leading to Home Page               |
-| #20         | Community Engagement       | #21                     | Posting Content                         | 
-| #20         | Community Engagement       | #22                     | Comments                                |
-| #20         | Community Engagement       | #23                     | Post/Comment Score System               |
-| #20         | Community Engagement       | #24                     | Report System                           |
-| #20         | Community Engagement       | #25                     | Private Messages                        |
-| #20         | Community Engagement       | #26                     | Groups/Communities                      |
-| #27         | Admin Tools                | #28                     | Reported Content                        |
-| #27         | Admin Tools                | #29                     | Comment/Post Deleting                   |
-| #27         | Admin Tools                | #30                     | User Support Chat                       |
+| Epic Id | Epic Name | User Story Id | User Story Name | User Story Description |
+|---------|-----------|---------------|-----------------|------------------------|
+| #1 | User Authentication | #2 | Log In | As a user I want to be able to log in, log out, change my password, get an email alert and so on and so on |
 
 [Go upwards ⇧](#content)
 
@@ -136,193 +97,17 @@ I used GitHub Projects to organize and track my development progress. This helpe
 The wireframes for this project were created to provide a clear visual representation of the website’s layout and structure before the development phase began. Each wireframe focuses on the user interface (UI) and shows how the content and interactive elements are organized across different pages.
 
 
-<details>
-
-**<summary>Wireframe for small devices</summary>**
-
-![screenshot](documentation/readme/wireframe-small.png)
-
-</details>
-
-<details>
-
-**<summary>Wireframe for bigger devices</summary>**
-
-![screenshot](documentation/readme/wireframe-big.png)
-
-</details>
-
 [Go upwards ⇧](#content)
 
 ## Features
 
 This project includes several features to make it easy and fun for users to interact with content. Here are the main features:
 
-<details>
-
-**<summary>Logo</summary>**
-
-![screenshot](documentation/readme/features-logo.png)
-
-</details>
-
-
-<details>
-
-**<summary>Profile Icon</summary>**
-
-![screenshot](documentation/readme/features-profile-icon.png)
-
-</details>
-
-
-<details>
-
-**<summary>Profile Avatar</summary>**
-
-![screenshot](documentation/readme/features-profile-avatar.png)
-
-</details>
-
-
-<details>
-
-**<summary>Profile</summary>**
-
-![screenshot](documentation/readme/features-profile.png)
-
-</details>
-
-
-<details>
-
-**<summary>Edit Profile Button</summary>**
-
-![screenshot](documentation/readme/features-edit-profile-button.png)
-
-</details>
-
-
-<details>
-
-**<summary>Log Out Button</summary>**
-
-![screenshot](documentation/readme/features-log-out-button.png)
-
-</details>
-
-
-<details>
-
-**<summary>Delete Account Button</summary>**
-
-![screenshot](documentation/readme/features-delete-account-button.png)
-
-</details>
-
-
-<details>
-
-**<summary>Sidebar | not loged in</summary>**
-
-![screenshot](documentation/readme/features-sidebar-not-loged-in.png)
-
-</details>
-
-
-<details>
-
-**<summary>Edit Profile Form</summary>**
-
-![screenshot](documentation/readme/features-edit-profile-form.png)
-
-</details>
-
-
-<details>
-
-**<summary>Log In Form</summary>**
-
-![screenshot](documentation/readme/features-log-in-form.png)
-
-</details>
-
-
-<details>
-
-**<summary>Registration Form</summary>**
-
-![screenshot](documentation/readme/features-registration-form.png)
-
-</details>
-
-
-<details>
-
-**<summary>Profile Icon</summary>**
-
-![screenshot](documentation/readme/features-profile-icon.png)
-
-</details>
-
-
-<details>
-
-**<summary>Create Post Button</summary>**
-
-![screenshot](documentation/readme/features-create-post-button.png)
-
-</details>
-
-
-<details>
-
-**<summary>Create Post Form</summary>**
-
-![screenshot](documentation/readme/features-create-post-form.png)
-
-</details>
-
-
-<details>
-
-**<summary>Post</summary>**
-
-![screenshot](documentation/readme/features-post.png)
-
-</details>
-
-
-<details>
-
-**<summary>Post Details Page</summary>**
-
-![screenshot](documentation/readme/features-post-details-page.png)
-
-</details>
-
-
-<details>
-
-**<summary>Comment</summary>**
-
-![screenshot](documentation/readme/features-comment.png)
-
-</details>
-
 [Go upwards ⇧](#content)
 
 ## Database Schema
 
 The database schema for this project is designed to efficiently store and manage the data related to posts, users, and interactions on the platform. The schema follows a relational database model
-
-<details>
-
-**<summary>Database Schema</summary>**
-
-![screenshot](documentation/readme/database-schema.png)
-
-</details>
 
 [Go upwards ⇧](#content)
 
@@ -343,16 +128,6 @@ All images used in this application have been sourced from [Pinterest](https://i
 [Go upwards ⇧](#content)
 
 ## Typography
-
-The application uses a combination of the following fonts to create a clean and modern look:
-
-- **Open Sans:** This sans-serif font is the primary typeface used throughout the site for its readability and contemporary feel. It is employed for most of the body text and user interface elements.
-
-- **Arial:** As a widely available and versatile sans-serif font, Arial is used as a fallback for text elements when Open Sans is not available.
-
-- **Sans-serif:** A general sans-serif font family is used as a fallback to ensure text remains legible and consistent across different devices and browsers.
-
-These fonts were chosen to maintain clarity, readability, and a cohesive design aesthetic across the application.
 
 [Go upwards ⇧](#content)
 
