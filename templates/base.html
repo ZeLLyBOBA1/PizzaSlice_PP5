@@ -83,7 +83,7 @@
       align-items: center;
     }
 
-    .hamburger-button, .search-bar, .profile-icon, .shopping-cart-icon, .search-icon, .login-icon, .logo-image img, .home-icon{
+    .hamburger-button, .search-bar, .profile-icon, .shopping-cart-icon, .search-icon, .login-icon, .logo-image img, .home-icon, .logo-image{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -200,6 +200,26 @@
       }
       .home-icon{
         display: none;
+      }
+    }
+
+    @media(min-width:768px){
+      .hamburger-button{
+        display: none;
+      }
+      .header-left-side .logo{
+        display: inline;
+      }
+      .logo-name{
+        color: rgb(0, 0, 0);
+      }
+      .header-center .logo{
+        display: none;
+      }
+      .logo-image img{
+        background-color: black;
+        border-radius: 1rem;
+        padding: 1px;
       }
     }
 
