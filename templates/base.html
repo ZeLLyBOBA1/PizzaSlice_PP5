@@ -83,7 +83,11 @@
       align-items: center;
     }
 
-    .hamburger-button, .search-bar, .profile-icon, .shopping-cart-icon, .search-icon, .login-icon, .logo-image img, .home-icon, .logo-image{
+    .hamburger-button, .search-bar, 
+    .profile-icon, .shopping-cart-icon, 
+    .search-icon, .login-icon, 
+    .logo-image img, .home-icon, 
+    .logo-image, .drop-down-icon{
       display: flex;
       justify-content: center;
       align-items: center;
@@ -177,6 +181,40 @@
       border-radius: 0.5rem;
     }
 
+    .nav-links{
+      display: flex;
+      gap: 4px;
+      background-color: rgb(45, 45, 45);
+      border-radius: 0.4rem;
+      padding: 4px;
+    }
+
+    li{
+      list-style:none;
+    }
+
+    .drop-down-header{
+      padding-left: 2px;
+      display: flex;
+      background-color: rgb(229, 157, 32);
+      border-radius: 0.3rem;
+    }
+
+    .drop-down-header:hover .drop-down-icon{
+      transform: rotate(-90deg);
+    }
+
+    .drop-down-header p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+    }
+
+    .drop-down-icon{
+      transform: rotate(90deg);
+    }
+
     @media(min-width: 375px){
       .search-bar{
         width: 32px;
@@ -219,7 +257,10 @@
       .logo-image img{
         background-color: black;
         border-radius: 1rem;
-        padding: 1px;
+        padding: 2px;
+      }
+      .header-center{
+        gap: 10px;
       }
     }
 
@@ -277,6 +318,29 @@
 
       <div class="header-center">
 
+        <div class="nav-links">
+          <ul class="drop-down-header">
+            <p>
+              Explore
+            </p>
+            <div class="drop-down-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+              </svg>
+            </div>
+          </ul>
+          
+          <ul class="drop-down-header">
+            <p>
+              Menu
+            </p>
+            <div class="drop-down-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+              </svg>
+            </div>
+          </ul>
+        </div>
 
         <form method="GET" action="" class="search-bar">
           <input class="search-input" type="text" placeholder="PizzaSlice">
