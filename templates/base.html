@@ -104,8 +104,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 4px;
-      padding: 5px;
+      
+      padding: 2px;
       background-color: rgb(229, 157, 32);
       height: 100%;
       border-radius: 0.5rem;
@@ -144,34 +144,12 @@
       background-color: rgb(229, 157, 32);
     }
 
-
-
-    /* .search-bar:focus-within .search-input {
-      opacity: 1; 
-      animation: slideIn 0.5s forwards; 
-    }
-
     .search-bar:focus-within ~ .logo {
       display: none;
     }
 
     .search-bar:focus-within{
       width: 100%;
-    } */
-
-    @keyframes slideIn {
-      0% {
-        position: static;
-        height: 100%;
-        width: 0;
-        opacity: 0;
-      }
-      100% {
-        position: static;
-        height: 100%;
-        width: 100%;
-        opacity: 1;
-      }
     }
 
     .shopping-cart-icon{
@@ -199,6 +177,47 @@
       border-radius: 0.5rem;
     }
 
+    @media(min-width: 375px){
+      .search-bar{
+        width: 32px;
+        height: 32px;
+      }
+      .search-input{
+        width: 36px;
+        height: 36px;
+        opacity: 0;
+        position: absolute;
+      }
+      .search-icon{
+        position: relative;
+      }
+      .search-bar:focus-within .search-input {
+      opacity: 1; 
+      animation: slideIn 0.5s forwards;
+      } 
+      .logo{
+        display: inline;
+      }
+      .home-icon{
+        display: none;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        position: static;
+        height: 100%;
+        width: 0;
+        opacity: 0;
+      }
+      100% {
+        position: static;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+    
   </style>
   </head>
 
