@@ -449,6 +449,8 @@
             </div>
           </div>
 
+          {% if user.is_authenticated and user.is_staff %}
+
           <div class="nav-container">
             <div class="drop-down-header">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
@@ -465,6 +467,8 @@
               </a>
             </div>
           </div>
+
+          {% endif %}
 
         </div>
 
