@@ -71,6 +71,8 @@
       background-color: rgb(0, 0, 0);
       padding: 5px;
       height: 50px;
+      max-width: 1024px;
+      margin: 0 auto;
     }
 
     .header-left-side{
@@ -133,7 +135,7 @@
       opacity: 1; 
       animation: none; 
       transition: margin-left 0.5s ease; 
-      z-index: 1; 
+      z-index: 0; 
       outline: none;
       cursor: pointer;
       background-color: rgb(45, 45, 45);
@@ -183,36 +185,95 @@
 
     .nav-links{
       display: flex;
-      gap: 4px;
+      flex-direction: column;
+      position: fixed;
+      gap: 20px;
       background-color: rgb(45, 45, 45);
-      border-radius: 0.4rem;
+      border-radius: 0 0.4rem 0.4rem 0;
       padding: 4px;
+      top: 10%;
+      left: 0;
+      height: 80%;
+      transform: translateX(-110%);
+      transition: 0.5s;
+      z-index: 1;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     li{
       list-style:none;
     }
 
+    .staff-container{
+      background-color: rgb(20, 104, 37);
+    }
+
     .drop-down-header{
+      font-family: monospace;
+      font-size: 20px;
       padding-left: 2px;
       display: flex;
+      align-items: center;
+      padding-right: 6px;
+      height: 24px;
       background-color: rgb(229, 157, 32);
-      border-radius: 0.3rem;
+      border-radius: 0.2rem 0.2rem 0 0;
+      gap: 2px;
     }
 
     .drop-down-header:hover .drop-down-icon{
       transform: rotate(-90deg);
     }
-
-    .drop-down-header p{
+ 
+    .drop-down-container{
+      padding: 4px;
+      background-color: rgb(60, 60, 60); 
+      color: rgb(180, 180, 180);
+      border-radius: 0 0 0.2rem 0.2rem;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .drop-down-container a{
+      display: flex;
       align-items: center;
       font-family: monospace;
+      gap: 2px;
+      background-color: rgb(75, 75, 75);
+      border-radius: 0.3rem;
     }
 
     .drop-down-icon{
+      display: none;
       transform: rotate(90deg);
+    }
+
+    #pop-up-checkbox{
+      display: none;
+    }
+
+    #pop-up-checkbox:checked ~ .header-center .nav-links{
+      transform: translateX(0);
+    }
+
+    #pop-up-checkbox:checked ~ label .overlay{
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      display: inline;
+      z-index: 1;
+    }
+
+    label .overlay{
+      display: none;
+      background-color: rgba(0, 0, 0, 0);
+      width: 200%; 
+      height: 200%; 
+      position: fixed; 
+      backdrop-filter: blur(0px);
+      top: 0;
+      left: 0;
     }
 
     @media(min-width: 375px){
@@ -262,6 +323,10 @@
       .header-center{
         gap: 10px;
       }
+      .nav-links{
+        position: static;
+        border-radius: 0.2rem;
+      }
     }
 
     @keyframes slideIn {
@@ -286,14 +351,21 @@
 
     <header>
 
+      <input type="checkbox" id="pop-up-checkbox">
+
+      <label for="pop-up-checkbox">
+          <a class="overlay"></a>
+      </label>
+
       <div class="header-left-side">
 
+      <label for="pop-up-checkbox">
         <div class="hamburger-button nav-icon"> 
           <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
           </svg>
         </div>
-
+      </label>
         
         <a class="home-icon nav-icon" href="">
           <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
@@ -319,27 +391,81 @@
       <div class="header-center">
 
         <div class="nav-links">
-          <ul class="drop-down-header">
-            <p>
-              Explore
-            </p>
-            <div class="drop-down-icon">
+          <div class="nav-container">
+            <div class="drop-down-header">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                <path d="m300-300 280-80 80-280-280 80-80 280Zm180-120q-25 0-42.5-17.5T420-480q0-25 17.5-42.5T480-540q25 0 42.5 17.5T540-480q0 25-17.5 42.5T480-420Zm0 340q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 133 93.5 226.5T480-160Zm0-320Z"/>
               </svg>
+              <ul>Explore</ul>
             </div>
-          </ul>
-          
-          <ul class="drop-down-header">
-            <p>
-              Menu
-            </p>
-            <div class="drop-down-icon">
+            <div class="drop-down-container">
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(180, 180, 180)">
+                  <path d="M200-160v-366L88-440l-48-64 440-336 160 122v-82h120v174l160 122-48 64-112-86v366H520v-240h-80v240H200Zm80-80h80v-240h240v240h80v-347L480-739 280-587v347Zm120-319h160q0-32-24-52.5T480-632q-32 0-56 20.5T400-559Zm-40 319v-240h240v240-240H360v240Z"/>
+                </svg>
+                <li>Homepage</li>
+              </a>
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(180, 180, 180)">
+                  <path d="m480-80-10-120h-10q-142 0-241-99t-99-241q0-142 99-241t241-99q71 0 132.5 26.5t108 73q46.5 46.5 73 108T800-540q0 75-24.5 144t-67 128q-42.5 59-101 107T480-80Zm80-146q71-60 115.5-140.5T720-540q0-109-75.5-184.5T460-800q-109 0-184.5 75.5T200-540q0 109 75.5 184.5T460-280h100v54Zm-101-95q17 0 29-12t12-29q0-17-12-29t-29-12q-17 0-29 12t-12 29q0 17 12 29t29 12Zm-29-127h60q0-30 6-42t38-44q18-18 30-39t12-45q0-51-34.5-76.5T460-720q-44 0-74 24.5T344-636l56 22q5-17 19-33.5t41-16.5q27 0 40.5 15t13.5 33q0 17-10 30.5T480-558q-35 30-42.5 47.5T430-448Zm30-65Z"/>
+                </svg>
+                <li>Contact</li>
+              </a>
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(180, 180, 180)">
+                  <path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"/>
+                </svg>
+                <li>About</li>
+              </a>
+            </div>
+          </div>
+
+          <div class="nav-container">
+            <div class="drop-down-header">
               <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-                <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/>
+                <path d="M560-564v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-600q-38 0-73 9.5T560-564Zm0 220v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-380q-38 0-73 9t-67 27Zm0-110v-68q33-14 67.5-21t72.5-7q26 0 51 4t49 10v64q-24-9-48.5-13.5T700-490q-38 0-73 9.5T560-454ZM260-320q47 0 91.5 10.5T440-278v-394q-41-24-87-36t-93-12q-36 0-71.5 7T120-692v396q35-12 69.5-18t70.5-6Zm260 42q44-21 88.5-31.5T700-320q36 0 70.5 6t69.5 18v-396q-33-14-68.5-21t-71.5-7q-47 0-93 12t-87 36v394Zm-40 118q-48-38-104-59t-116-21q-42 0-82.5 11T100-198q-21 11-40.5-1T40-234v-482q0-11 5.5-21T62-752q46-24 96-36t102-12q58 0 113.5 15T480-740q51-30 106.5-45T700-800q52 0 102 12t96 36q11 5 16.5 15t5.5 21v482q0 23-19.5 35t-40.5 1q-37-20-77.5-31T700-240q-60 0-116 21t-104 59ZM280-494Z"/>
               </svg>
+              <ul>Menu</ul>
             </div>
-          </ul>
+            <div class="drop-down-container">
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(180, 180, 180)">
+                  <path d="M9.76 2.021a.995.995 0 0 0-.989.703L3.579 19.166a1 1 0 0 0 1.255 1.255l16.442-5.192a.991.991 0 0 0 .702-.988C21.6 7.666 16.334 2.4 9.76 2.021zM10 16a2 2 0 1 1 .001-4.001A2 2 0 0 1 10 16zm6-2a2 2 0 1 1 .001-4.001A2 2 0 0 1 16 14z"></path>
+                </svg>
+                <li>Pizza</li>
+              </a>
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(180, 180, 180)">
+                  <path d="M20.832 4.555A1 1 0 0 0 20 3H4a1 1 0 0 0-.832 1.554L11 16.303V20H8v2h8v-2h-3v-3.697l7.832-11.748zm-2.7.445-2 3H7.868l-2-3h12.264z"></path>
+                </svg>
+                <li>Drinks</li>
+              </a>
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(180, 180, 180)">
+                  <path d="M482-40 294-400q-71 3-122.5-41T120-560q0-51 29.5-92t74.5-58q18-91 89.5-150.5T480-920q95 0 166.5 59.5T736-710q45 17 74.5 58t29.5 92q0 75-53 119t-119 41L482-40ZM280-480q15 0 29.5-5t26.5-17l22-22 26 16q21 14 45.5 21t50.5 7q26 0 50.5-7t45.5-21l26-16 22 22q12 12 26.5 17t29.5 5q33 0 56.5-23.5T760-560q0-30-19-52.5T692-640l-30-4-2-32q-5-69-57-116.5T480-840q-71 0-123 47.5T300-676l-2 32-30 6q-30 6-49 27t-19 51q0 33 23.5 56.5T280-480Zm202 266 108-210q-24 12-52 18t-58 6q-27 0-54.5-6T372-424l110 210Zm-2-446Z"/>
+                </svg>
+                <li>Desserts</li>
+              </a>
+            </div>
+          </div>
+
+          <div class="nav-container">
+            <div class="drop-down-header">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17-62.5t47-43.5q60-30 124.5-46T480-440q67 0 131.5 16T736-378q30 15 47 43.5t17 62.5v112H160Zm320-400q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm160 228v92h80v-32q0-11-5-20t-15-14q-14-8-29.5-14.5T640-332Zm-240-21v53h160v-53q-20-4-40-5.5t-40-1.5q-20 0-40 1.5t-40 5.5ZM240-240h80v-92q-15 5-30.5 11.5T260-306q-10 5-15 14t-5 20v32Zm400 0H320h320ZM480-640Z"/>
+              </svg>
+              <ul>Staff</ul>
+            </div>
+            <div class="drop-down-container">
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(180, 180, 180)">
+                  <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                </svg>
+                <li>Dashboard</li>
+              </a>
+            </div>
+          </div>
+
         </div>
 
         <form method="GET" action="" class="search-bar">
