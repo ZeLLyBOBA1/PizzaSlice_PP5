@@ -37,6 +37,10 @@
         box-sizing: border-box;
     }
 
+    body{
+      background-color: rgb(30, 30, 30);
+    }
+
     .logo{
       display: none;
     }
@@ -68,7 +72,6 @@
       justify-content: center;
       align-items: center;
       gap: 5px;
-      background-color: rgb(0, 0, 0);
       padding: 5px;
       height: 50px;
       max-width: 1024px;
@@ -123,7 +126,7 @@
       position: relative;
       height: 32px;
       gap: 4px;   
-      width: 100%;   
+      width: 100%;
     }
 
     .search-input {
@@ -229,7 +232,6 @@
     .drop-down-container{
       padding: 4px;
       background-color: rgb(60, 60, 60); 
-      color: rgb(180, 180, 180);
       border-radius: 0 0 0.2rem 0.2rem;
       display: flex;
       flex-direction: column;
@@ -243,6 +245,8 @@
       gap: 2px;
       background-color: rgb(75, 75, 75);
       border-radius: 0.3rem;
+      text-decoration: none;
+      color: rgb(180, 180, 180);
     }
 
     .drop-down-container a:hover{
@@ -407,7 +411,7 @@
         opacity: 1;
       }
     }
-    
+
   </style>
   </head>
 
@@ -431,7 +435,7 @@
         </div>
       </label>
         
-        <a class="home-icon nav-icon" href="">
+        <a class="home-icon nav-icon" href="{% url 'index' %}">
           <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
             <path d="M200-160v-366L88-440l-48-64 440-336 160 122v-82h120v174l160 122-48 64-112-86v366H520v-240h-80v240H200Zm80-80h80v-240h240v240h80v-347L480-739 280-587v347Zm120-319h160q0-32-24-52.5T480-632q-32 0-56 20.5T400-559Zm-40 319v-240h240v240-240H360v240Z"/>
           </svg>
@@ -439,7 +443,7 @@
         
 
         <div class="logo">
-          <a href="">
+          <a href="{% url 'index' %}">
             <div class="logo-name">
               <p>PizzaSlice</p>
             </div>
@@ -466,7 +470,7 @@
               </svg>
             </div>
             <div class="drop-down-container">
-              <a>
+              <a href="{% url 'index' %}">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(180, 180, 180)">
                   <path d="M200-160v-366L88-440l-48-64 440-336 160 122v-82h120v174l160 122-48 64-112-86v366H520v-240h-80v240H200Zm80-80h80v-240h240v240h80v-347L480-739 280-587v347Zm120-319h160q0-32-24-52.5T480-632q-32 0-56 20.5T400-559Zm-40 319v-240h240v240-240H360v240Z"/>
                 </svg>
@@ -585,11 +589,11 @@
           </div>
         </div>
       {% else %}
-        <div class="login-icon nav-icon">
+        <a href="{% url 'account_signup' %}" class="login-icon nav-icon">
           <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000">
             <path d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
           </svg>
-        </div>
+        </a>
       {% endif %}
       </div>
   
