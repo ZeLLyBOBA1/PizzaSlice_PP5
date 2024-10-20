@@ -173,6 +173,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Allauth настройки
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Аутентификация через email
+ACCOUNT_EMAIL_REQUIRED = True  # Email обязателен для регистрации
+ACCOUNT_USERNAME_REQUIRED = False  # Username не требуется
+LOGIN_REDIRECT_URL = '/'  # URL после успешного входа
+ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'  # Куда перенаправлять после выхода
+
+
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'PizzaSlice@example.com'
+    DEFAULT_FROM_EMAIL = 'pizzaslice@example.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
