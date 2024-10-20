@@ -174,12 +174,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Allauth настройки
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Аутентификация через email
 ACCOUNT_EMAIL_REQUIRED = True  # Email обязателен для регистрации
 ACCOUNT_USERNAME_REQUIRED = False  # Username не требуется
 LOGIN_REDIRECT_URL = '/'  # URL после успешного входа
-ACCOUNT_LOGOUT_REDIRECT_URL = '/accounts/login/'  # Куда перенаправлять после выхода
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Куда перенаправлять после выхода
 
 
 if 'DEVELOPMENT' in os.environ:
