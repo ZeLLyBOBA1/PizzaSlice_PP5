@@ -178,6 +178,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Аутентификация через email
 ACCOUNT_EMAIL_REQUIRED = True  # Email обязателен для регистрации
 ACCOUNT_USERNAME_REQUIRED = False  # Username не требуется
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_UNIQUE_EMAIL = True
 LOGIN_REDIRECT_URL = '/'  # URL после успешного входа
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Куда перенаправлять после выхода
 
