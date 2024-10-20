@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-81)+c(2536f8-83q4c+t)0&rz*kx)ko!(5asm2tcv10rht2v+a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-zellyboba1-pizzaslicepp-vua3n12dxk2.ws.codeinstitute-ide.net',]
+ALLOWED_HOSTS = ['8000-zellyboba1-pizzaslicepp-vua3n12dxk2.ws.codeinstitute-ide.net',
+                 'pizzaslice-9165a3105687.herokuapp.com'
+                ]
                   
 
 
