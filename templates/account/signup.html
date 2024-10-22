@@ -99,6 +99,11 @@
         background-color: rgb(60, 60, 60);
       }
 
+      .form-group{
+        display: flex;
+        justify-content: center;
+      }
+
 </style>
 {% endblock extra_css %}
 
@@ -122,6 +127,13 @@
         </div>
 
         {{ redirect_field }}
+        {% if form.errors %}
+                <div class="errorlist">
+                    {% for field, errors in form.errors.items %}
+                        <p style="color: red; width: 220px; text-align: left; border: dashed, red, 2px; padding: 6px; hyphens: auto;">{{ errors|join:", " }}</p>
+                    {% endfor %}
+                </div>
+        {% endif %}
         
         <button type="submit" class="btn btn-primary">{% trans "Sign Up" %}</button>
     </form>

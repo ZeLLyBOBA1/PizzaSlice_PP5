@@ -118,14 +118,14 @@
 
             {{ redirect_field }}
 
-            <!-- Блок ошибок формы -->
-            <!-- {% if form.errors %}
+            
+            {% if form.errors %}
                 <div class="errorlist">
                     {% for field, errors in form.errors.items %}
-                        <p style="color: red;">{{ field|capfirst }}: {{ errors|join:", " }}</p>
+                        <p style="color: red; width: 220px; text-align: left; border: dashed, red, 2px; padding: 6px; hyphens: auto;">{{ errors|join:", " }}</p>
                     {% endfor %}
                 </div>
-            {% endif %} -->
+            {% endif %}
 
             <!-- Кнопка отправки формы -->
             <button type="submit">{% trans "Login" %}</button>

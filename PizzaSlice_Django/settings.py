@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-81)+c(2536f8-83q4c+t)0&rz*kx)ko!(5asm2tcv10rht2v+a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-zellyboba1-pizzaslicepp-vua3n12dxk2.ws.codeinstitute-ide.net',
                  'pizzaslice-9165a3105687.herokuapp.com'
@@ -181,16 +181,18 @@ ACCOUNT_USERNAME_REQUIRED = False  # Username не требуется
 LOGIN_REDIRECT_URL = '/'  # URL после успешного входа
 ACCOUNT_LOGOUT_REDIRECT_URL = '/'  # Куда перенаправлять после выхода
 ACCOUNT_ADAPTER = 'homepage.adapters.CustomAccountAdapter'
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 
-if 'DEVELOPMENT' in os.environ:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'pizzaslice@example.com'
 
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_PORT = 587
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+# if 'DEVELOPMENT' in os.environ:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#     DEFAULT_FROM_EMAIL = 'pizzaslice@example.com'
+
+# else:
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'pizzaslice1123010@gmail.com'
+EMAIL_HOST_PASSWORD = 'yxaq knpq ugip txdt'
+DEFAULT_FROM_EMAIL = 'PizzaSlice <pizzaslice1123010@gmail.com>'
