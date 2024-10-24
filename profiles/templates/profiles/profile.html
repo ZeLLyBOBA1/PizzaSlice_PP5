@@ -58,7 +58,7 @@
         position: absolute;
         transform: translateY(-50%);
         left: 4%;
-        background-color: rgb(45, 45, 45);
+        background-color: rgb(60, 60, 60);
         padding: 0 6px;
         transition: 0.2s;
         border-radius: 0.3rem;
@@ -70,7 +70,7 @@
         border: 1px solid rgb(90, 90, 90);
         border-radius: 4px;
         font-size: 16px;
-        background-color: rgb(45, 45, 45);
+        background-color: rgb(60, 60, 60);
         color: rgb(180, 180, 180);
         z-index: 1;
         width: 100%;
@@ -191,10 +191,6 @@
         margin-top: 8px;
     }
 
-    .profile-content{
-
-    }
-
     @media(min-width:768px){
         .profile-content{
             flex-direction: row;
@@ -221,35 +217,39 @@
                             <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/>
                         </svg>
                     </button>
-                    <button type="submit" id="save-changes-button">
-                        <svg class="save-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-                            <path d="M840-680v480q0 33-23.5 56.5T760-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h480l160 160Zm-80 34L646-760H200v560h560v-446ZM480-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM240-560h360v-160H240v160Zm-40-86v446-560 114Z"/>
-                        </svg>
-                    </button>
+                    <form method="post" action="{% url 'edit_profile' %}" id="profile-form">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" id="save-changes-button">Save Changes</button>
+                    </form>                    
                     <button type="submit" id="delete-account-button">Delete Account</button>
-                    <button type="submit" id="logout-button">
-                        <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
-                            <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
-                        </svg>
-                    </button>
+                    <form method="post" action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" id="logout-button">
+                            <svg class="logout-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z"/>
+                            </svg>
+                        </button>
+                    </form>
+                    
                 </div>
                 <hr style="border: none; height: 2px; background-color: rgb(75, 75, 75);">
-                <form method="post" action="">
+                <form method="post" action="" id="profile-form">
                     <div class="form-group">
-                        <input type="email" name="email" maxlength="320" required="" id="id_email">
-                        <label class="label" for="id_email">First Name</label>
+                        <input class="profile-input" value="John" type="text" name="first-name" maxlength="30" required="" id="id_first_name" disabled>
+                        <label class="profile-label" for="id_email">First Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" maxlength="320" required="" id="id_email">
-                        <label class="label" for="id_email">Last Name</label>
+                        <input class="profile-input" value="Doe" type="text" name="last-name" maxlength="30" required="" id="id_last_name" disabled>
+                        <label class="profile-label" for="id_email">Last Name</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" maxlength="320" required="" id="id_email">
-                        <label class="label" for="id_email">Phone</label>
+                        <input class="profile-input" value="123-456-7890" type="tel" name="phone" maxlength="15" required="" id="id_phone" disabled>
+                        <label class="profile-label" for="id_email">Phone</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" maxlength="320" required="" id="id_email">
-                        <label class="label" for="id_email">Address</label>
+                        <input class="profile-input" value="mail@gmail.com" type="text" name="address" maxlength="320" required="" id="id_address" disabled>
+                        <label class="profile-label" for="id_email">Address</label>
                     </div>
                 </form>
             </div>
@@ -278,4 +278,34 @@
         </div>
     </div>
 </div>
+
+<script>
+    const editBtn = document.getElementById('edit-button');
+    const saveBtn = document.getElementById('save-changes-button');
+    const inputs = document.querySelectorAll('.profile-input');
+    const labels = document.querySelectorAll('.profile-label');
+    const form = document.getElementById('profile-form');
+    
+
+    editBtn.addEventListener('click', function() {
+        inputs.forEach(input => input.disabled = false);  // Активируем инпуты
+        inputs.forEach(input =>{
+            input.style.backgroundColor = 'rgb(45,45,45)'
+        })
+        labels.forEach(label =>{
+            label.style.backgroundColor = 'rgb(45,45,45)'
+        })
+    });
+
+    saveBtn.addEventListener('click', function() {
+        inputs.forEach(input => input.disabled = true);  // Делаем инпуты снова неактивными
+        inputs.forEach(input =>{
+            input.style.backgroundColor = 'rgb(60,60,60)'
+        })
+        labels.forEach(label =>{
+            label.style.backgroundColor = 'rgb(60,60,60)'
+        })
+        form.submit();  
+    });
+</script>
 {% endblock %}
