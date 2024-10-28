@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['8000-zellyboba1-pizzaslicepp-vua3n12dxk2.ws.codeinstitute-ide.net',
                  'pizzaslice-9165a3105687.herokuapp.com'
