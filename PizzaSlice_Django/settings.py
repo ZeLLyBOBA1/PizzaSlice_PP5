@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ.get('SECRET_KEY', '')
-SECRET_KEY = '-(n+0(70exx7v@okrar4=uno3fg^edu=xuu0-7)5v_s6o4vb*h'
+SECRET_KEY = 'django-insecure-81)+c(2536f8-83q4c+t)0&rz*kx)ko!(5asm2tcv10rht2v+a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -110,16 +110,16 @@ WSGI_APPLICATION = 'PizzaSlice_Django.wsgi.application'
 #     }
 
 # else:
-#         DATABASES = {
-#             'default': {
-#                 'ENGINE': 'django.db.backends.sqlite3',
-#                 'NAME': BASE_DIR / 'db.sqlite3',
-#             }
-#         }
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://ucsn9xftapm:hlqk3mu6mwKd@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/range_grant_tall_678781')
-}
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://ucsn9xftapm:hlqk3mu6mwKd@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/range_grant_tall_678781')
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
