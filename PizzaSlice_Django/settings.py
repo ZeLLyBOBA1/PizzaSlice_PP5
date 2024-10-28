@@ -107,13 +107,13 @@ if 'DATABASE_URL' in os.environ:
     DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-# else:
-# DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': BASE_DIR / 'db.sqlite3',
-#         }
-#     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # DATABASES = {
 #     'default': dj_database_url.parse('postgres://ucsn9xftapm:hlqk3mu6mwKd@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/shove_tutu_femur_37233')
