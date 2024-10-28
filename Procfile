@@ -1,2 +1,1 @@
-web: gunicorn PizzaSlice_Django.wsgi --log-file -
-
+web: gunicorn PizzaSlice_Django.wsgi:application
