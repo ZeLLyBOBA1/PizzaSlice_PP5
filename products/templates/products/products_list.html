@@ -10,11 +10,92 @@
     max-width: 1024px;
     margin: 6px auto;
     border-radius: 0.5rem;
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+}
+.categories{
+    background-color: rgb(35,35,35);
+    border-radius: 0.2rem;
+    height: fit-content;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.products{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.products-sort-button{
+    background-color: rgb(120,120,120);
+    width: fit-content;
+    border-radius: 0.2rem;
+    display: flex;
+    align-self: flex-end;
+    padding: 4px;
+    font-family: monospace;
+}
+.products-sort-button:hover{
+    background-color: rgba(120,120,120, 0.7);
+    cursor: pointer;
+}
+.products-list{
+    background-color: rgb(60,60,60);
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2rem;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.category-pizza-icon, .category-drink-icon, .category-dessert-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+}
+.category-icon{
+    background-color: rgb(45,45,45);
+    border-radius: 0.5rem;
+}
+.category-icon:hover{
+    background-color: rgb(55,55,55);
+    cursor: pointer;
 }
 </style>
 
 <div class="products-list-container">
-
+    <div class="categories">
+        <a class="category-pizza-icon category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="rgb(120,120,120)">
+                <path d="M480-80 80-680q85-72 186.5-116T480-840q112 0 213.5 43.5T880-680L480-80Zm0-144 292-438q-65-45-139-71.5T480-760q-79 0-152.5 26.5T188-662l292 438ZM380-560q25 0 42.5-17.5T440-620q0-25-17.5-42.5T380-680q-25 0-42.5 17.5T320-620q0 25 17.5 42.5T380-560Zm100 200q25 0 42.5-17.5T540-420q0-25-17.5-42.5T480-480q-25 0-42.5 17.5T420-420q0 25 17.5 42.5T480-360Zm0 136Z"/>
+            </svg>
+        </a>
+        <a class="category-drink-icon category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="rgb(120,120,120)">
+                <path d="M240-120v-80h200v-200L120-760v-80h720v80L520-400v200h200v80H240Zm58-560h364l72-80H226l72 80Zm182 204 111-124H369l111 124Zm0 0Z"/>
+            </svg>
+        </a>
+        <a class="category-dessert-icon category-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="rgb(120,120,120)">
+                <path d="M482-40 294-400q-71 3-122.5-41T120-560q0-51 29.5-92t74.5-58q18-91 89.5-150.5T480-920q95 0 166.5 59.5T736-710q45 17 74.5 58t29.5 92q0 75-53 119t-119 41L482-40ZM280-480q15 0 29.5-5t26.5-17l22-22 26 16q21 14 45.5 21t50.5 7q26 0 50.5-7t45.5-21l26-16 22 22q12 12 26.5 17t29.5 5q33 0 56.5-23.5T760-560q0-30-19-52.5T692-640l-30-4-2-32q-5-69-57-116.5T480-840q-71 0-123 47.5T300-676l-2 32-30 6q-30 6-49 27t-19 51q0 33 23.5 56.5T280-480Zm202 266 108-210q-24 12-52 18t-58 6q-27 0-54.5-6T372-424l110 210Zm-2-446Z"/>
+            </svg>
+        </a>
+    </div>
+    <div class="products-list">
+        <div class="products-sort-button">
+            Sort by: Price
+        </div>
+        <hr style="border: none; height: 2px; background-color: rgb(75, 75, 75);">
+        <div class="products">
+            
+        </div>
+    </div>
 </div>
 
 {% endblock %}
