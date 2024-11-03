@@ -5,7 +5,7 @@
 <style>
 .products-list-container{
     width: 100%;
-    height: 2000px;
+    height: 100%;
     background-color: rgb(45,45,45);
     max-width: 1024px;
     margin: 6px auto;
@@ -25,10 +25,12 @@
 }
 .products{
     width: 100%;
-    height: 100%;
+    height: fit-content;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-direction: left;
     gap: 8px;
+    flex-wrap: wrap;
 }
 .products-sort-button{
     background-color: rgb(120,120,120);
@@ -69,12 +71,58 @@
 }
 .product{
     background-color: rgb(45, 45, 45);
-    width: 1;
-    aspect-ratio: 1 / 1;
+    width: 100%; /* или любая другая единица измерения */
+    aspect-ratio: 1 / 1; /* Ширина равна высоте */
     border-radius: 0.5rem;
+    filter: brightness(0.8);
+    background-size: cover;
 }
 .product-image{
     width: 100%;
+}
+.product-name{
+    color: rgb(240,240,240);
+    backdrop-filter: blur(4px);
+    width: fit-content;
+    border-radius: 0.3rem;
+    padding: 5px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.product-price{
+    font-size: 18px;
+    color: rgb(240,240,240);
+    backdrop-filter: blur(4px);
+    width: fit-content;
+    border-radius: 0.3rem;
+    padding: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+.add-to-cart{
+    font-size: 32px;
+    background-color: rgb(0,180,0);
+    border-radius: 0.3rem;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(min-width:600px){
+    .product{
+        width: 49%;
+    }
+}
+@media(min-width:768px){
+    .product{
+        width: 32%;
+    }
 }
 </style>
 
@@ -103,13 +151,14 @@
         <hr style="border: none; height: 2px; background-color: rgb(75, 75, 75);">
         <div class="products">
             {% for product in products %}
-                <div class="product">
+                <div class="product" style="background-image: url('{{ product.image.url }}')">
                     <h2 class="product-name">{{ product.title }}</h2>
-                    <p class="product-description">Description: {{ product.description }}</p>
-                    {% if product.image %}
+                    <!-- <p class="product-description">Description: {{ product.description }}</p> -->
+                    <!-- {% if product.image %}
                         <img class="product-image" src="{{ product.image.url }}" alt="{{ product.title }}">
-                    {% endif %}
-                    <p class="product-price">Price: {{ product.price }}€</p>
+                    {% endif %} -->
+                    <p class="product-price">{{ product.price }}€</p>
+                    <p class="add-to-cart">+</p>
                 </div>
             {% empty %}
                 <div>Нет доступных продуктов.</div>

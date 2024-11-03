@@ -6,6 +6,6 @@ from .models import Product
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title', 'sku', 'price',)  # Поля, которые будут отображаться в списке
     search_fields = ('title', 'sku',)  # Поля для поиска в админке
-    list_filter = ('category',)  # Фильтрация по категориям
+    list_filter = ('category',)  
 
 admin.site.register(Product, ProductAdmin)
