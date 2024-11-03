@@ -32,19 +32,6 @@
     gap: 8px;
     flex-wrap: wrap;
 }
-.products-sort-button{
-    background-color: rgb(120,120,120);
-    width: fit-content;
-    border-radius: 0.2rem;
-    display: flex;
-    align-self: flex-end;
-    padding: 4px;
-    font-family: monospace;
-}
-.products-sort-button:hover{
-    background-color: rgba(120,120,120, 0.7);
-    cursor: pointer;
-}
 .products-list{
     background-color: rgb(60,60,60);
     width: 100%;
@@ -114,6 +101,51 @@
     justify-content: center;
     align-items: center;
 }
+.products-sort-button-container{
+    width: fit-content;
+    height: 30px;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding: 4px;
+    font-family: monospace;
+    z-index: 1;
+}
+.sort-button-header{
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    padding: 4px;
+    background-color: rgb(90,90,90);
+}
+.sort-options-container{
+    background-color: rgb(120,120,120);
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+.sort-options-container a{
+    display: flex;
+    font-size: 20px;
+    padding: 2px;
+    padding-left: 6px;
+    color: rgb(0,0,0);
+    text-decoration: none;
+}
+.sort-options-container a svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sort-options-container a:hover{
+    background-color: rgb(110, 110,110);
+}
+.products-sort-button-container:hover .sort-options-container{
+    display:inline
+}
 @media(min-width:600px){
     .product{
         width: 49%;
@@ -145,8 +177,36 @@
         </a>
     </div>
     <div class="products-list">
-        <div class="products-sort-button">
-            Sort by: Price
+        <div class="products-sort-button-container">
+            <div class="sort-button-header">
+                Sort by: 
+                {% if sort_by == 'price' %}
+                    Cheap first
+                {% elif sort_by == '-price' %}
+                    Expensive first
+                {% elif sort_by == 'category' %}
+                    Category
+                {% else %}
+                    Default
+                {% endif %}
+            </div>
+            <div class="sort-options-container">
+                <a href="?sort=category">Category
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(0,0,0)">
+                        <path d="m260-520 220-360 220 360H260ZM700-80q-75 0-127.5-52.5T520-260q0-75 52.5-127.5T700-440q75 0 127.5 52.5T880-260q0 75-52.5 127.5T700-80Zm-580-20v-320h320v320H120Zm580-60q42 0 71-29t29-71q0-42-29-71t-71-29q-42 0-71 29t-29 71q0 42 29 71t71 29Zm-500-20h160v-160H200v160Zm202-420h156l-78-126-78 126Zm78 0ZM360-340Zm340 80Z"/>
+                    </svg>
+                </a>
+                <a href="?sort=price">Lowest
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(0,0,0)">
+                        <path d="M600-120q-118 0-210-67T260-360H120v-80h122q-3-24-2.5-44.5T242-520H120v-80h140q38-106 130-173t210-67q69 0 130.5 24.5T840-748l-57 56q-37-32-83.5-50T600-760q-85 0-152 44.5T347-600h253v80H323q-4 27-3 47.5t3 32.5h277v80H347q34 71 101 115.5T600-200q53 0 99.5-18t83.5-50l57 56q-48 43-109.5 67.5T600-120Z"/>
+                    </svg>
+                </a>
+                <a href="?sort=-price">Highest
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="rgb(0,0,0)">
+                        <path d="M600-120q-118 0-210-67T260-360H120v-80h122q-3-24-2.5-44.5T242-520H120v-80h140q38-106 130-173t210-67q69 0 130.5 24.5T840-748l-57 56q-37-32-83.5-50T600-760q-85 0-152 44.5T347-600h253v80H323q-4 27-3 47.5t3 32.5h277v80H347q34 71 101 115.5T600-200q53 0 99.5-18t83.5-50l57 56q-48 43-109.5 67.5T600-120Z"/>
+                    </svg>
+                </a>
+            </div>
         </div>
         <hr style="border: none; height: 2px; background-color: rgb(75, 75, 75);">
         <div class="products">
