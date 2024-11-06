@@ -27,7 +27,7 @@ def products_list(request):
             if not query:
                 return redirect(reverse('products_list'))
 
-            queries = Q(title__icontains=query) |  Q(description__icontains=query)
+            queries = Q(title__icontains=query) |  Q(description__icontains=query) |  Q(sku__icontains=query)
             products = products.filter(queries)
         
     return render(request, 'products/products_list.html', {'products': products,'search_term': query, 'current_categories': categories, 'sort_by': sort_by, })
