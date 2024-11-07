@@ -20,7 +20,7 @@ def delete_account(request):
         user = request.user
         user.delete()
         messages.success(request, "Your account has been deleted successfully.")
-        return redirect('index') 
+        return redirect('index')
     return redirect('profile')  
 
 @login_required
