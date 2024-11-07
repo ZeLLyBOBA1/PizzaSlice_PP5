@@ -295,7 +295,7 @@
     const form = document.getElementById('profile-form');
 
     editBtn.addEventListener('click', function() {
-        inputs.forEach(input => input.disabled = false);  // Активируем инпуты
+        inputs.forEach(input => input.disabled = false);  
         inputs.forEach(input =>{
             input.style.backgroundColor = 'rgb(45,45,45)'
         })
@@ -306,7 +306,7 @@
 
     saveBtn.addEventListener('click', function() {
         form.submit()
-        inputs.forEach(input => input.disabled = true);  // Делаем инпуты снова неактивными
+        inputs.forEach(input => input.disabled = true);  
         inputs.forEach(input =>{
             input.style.backgroundColor = 'rgb(60,60,60)'
         })

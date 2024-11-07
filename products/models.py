@@ -1,14 +1,12 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
 
-# Создание модели категории
 class Category(models.Model):
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
 
-# Создание модели продукта
 class Product(models.Model):
     title = models.CharField(max_length=64)
     sku = models.CharField(max_length=128)

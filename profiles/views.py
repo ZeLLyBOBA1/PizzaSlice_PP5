@@ -25,22 +25,20 @@ def delete_account(request):
 
 @login_required
 def update_profile(request):
-    profile = request.user.profile  # Получаем профиль текущего пользователя
+    profile = request.user.profile 
 
     if request.method == 'POST':
-        # Извлекаем данные из формы
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
         phone = request.POST.get('phone')
         address = request.POST.get('address')
 
-        # Обновляем профиль
         profile.first_name = first_name
         profile.last_name = last_name
         profile.phone = phone
         profile.address = address
-        profile.save()  # Сохраняем изменения
+        profile.save()  
 
-        return redirect('profile')  # Перенаправляем на страницу профиля
+        return redirect('profile')
 
     return render(request, 'profile_update.html', {'profile': profile})

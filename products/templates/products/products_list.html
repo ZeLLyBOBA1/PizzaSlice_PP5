@@ -208,10 +208,6 @@
             {% for product in products %}
                 <div class="product" style="background-image: url('{{ product.image.url }}')">
                     <h2 class="product-name">{{ product.title }}</h2>
-                    <!-- <p class="product-description">Description: {{ product.description }}</p> -->
-                    <!-- {% if product.image %}
-                        <img class="product-image" src="{{ product.image.url }}" alt="{{ product.title }}">
-                    {% endif %} -->
                     <p class="product-price">{{ product.price }}€</p> 
                     <a type="submit" class="add-to-cart">+</a>
                 </div>
