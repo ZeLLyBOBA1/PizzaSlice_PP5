@@ -31,3 +31,17 @@ def products_list(request):
             products = products.filter(queries)
         
     return render(request, 'products/products_list.html', {'products': products,'search_term': query, 'current_categories': categories, 'sort_by': sort_by, })
+
+
+
+
+def product_detail(request, product_id):
+    """ A view to show individual product details """
+
+    product = get_object_or_404(Product, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+
+    return render(request, 'products/product_detail.html', context)

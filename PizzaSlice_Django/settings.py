@@ -26,12 +26,15 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
+# SECRET_KEY = '-(n+0(70exx7v@okrar4=uno3fg^edu=xuu0-7)5v_s6o4vb*h'
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['8000-zellyboba1-pizzaslicepp-vua3n12dxk2.ws.codeinstitute-ide.net',
+                 '8000-zellyboba1-pizzaslicepp-9xzpgy8p4no.ws.codeinstitute-ide.net',
                  'pizzaslice-9165a3105687.herokuapp.com',
                 ]
                   
@@ -56,6 +59,7 @@ INSTALLED_APPS = [
     'profiles',
     'products',
     'checkout',
+    'bag',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +75,7 @@ MIDDLEWARE = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-zellyboba1-pizzaslicepp-vua3n12dxk2.ws.codeinstitute-ide.net',
+    'https://8000-zellyboba1-pizzaslicepp-9xzpgy8p4no.ws.codeinstitute-ide.net',
 ]
 
 ROOT_URLCONF = 'PizzaSlice_Django.urls'
@@ -90,6 +95,7 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'bag.contexts.bag_contents',
             ],
         },
     },
@@ -124,7 +130,7 @@ else:
         }
 
 # DATABASES = {
-#     'default': dj_database_url.parse('postgres://ucsn9xftapm:hlqk3mu6mwKd@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/range_grant_tall_678781')
+#     'default': dj_database_url.parse('postgresql://neondb_owner:JdGWSgOQM06l@ep-green-grass-a2w6hhko.eu-central-1.aws.neon.tech/range_grant_tall_678781')
 # }
 
 # Password validation
@@ -195,3 +201,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'pizzaslice1123010@gmail.com'
 EMAIL_HOST_PASSWORD = 'yxaq knpq ugip txdt'
 DEFAULT_FROM_EMAIL = 'PizzaSlice <pizzaslice1123010@gmail.com>'
+
+FREE_DELIVERY_THRESHOLD = 50 
+STANDARD_DELIVERY_PERCENTAGE = 10

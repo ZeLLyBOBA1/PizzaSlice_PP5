@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+.product-detail-container{
+    width: 100%;
+    height: 90vh;
+    background-color: rgb(45,45,45);
+    max-width: 1024px;
+    margin: 6px auto;
+    border-radius: 0.5rem;
+}
+
+.product{
+    background-color: rgb(45, 45, 45);
+    width: 100%; /* или любая другая единица измерения */
+    aspect-ratio: 1 / 1; /* Ширина равна высоте */
+    border-radius: 0.5rem;
+    filter: brightness(0.8);
+    background-size: cover;
+    margin: 15px;
+}
+
+.product-name{
+    font-size: 24px;
+    background-color: rgb(90,90,90);
+    color: rgb(240,240,240);
+    width: fit-content;
+    border-radius: 0.3rem;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+.product-price{
+    font-size: 18px;
+    background-color: rgb(90,90,90);
+    color: rgb(240,240,240);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.3rem;
+    padding: 2px;
+    margin-top: 28px;
+}
+
+.product-description{
+    font-size: 18px;
+    background-color: rgb(38,38,38);
+    color: rgb(120,120,120);
+    width: fit-content;
+    border-radius: 0.3rem;
+    padding: 10px;
+}
+
+.product-detail-wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+.product-image{
+    width: 40%;
+    aspect-ratio: 1 / 1; /* Ширина равна высоте */
+}
+
+.product-info{
+    width: 60%;
+    margin-left: 30px;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-info-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.quantity-container{
+    font-size: 18px;
+    background-color: rgb(90,90,90);
+    color: rgb(240,240,240);
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.3rem;
+    padding: 2px;
+}
+
+</style>
+
+<div class="product-detail-container">
+    <div class="product-detail-wrapper">
+        <div class="product-image">
+            <div class="product" style="background-image: url('{{ product.image.url }}')"></div>
+        </div>
+        <div class="product-info">
+            <div class="product-info-header">
+                <h2 class="product-name">{{ product.title }}</h2>
+                <p class="product-price">{{ product.price }}€</p> 
+            </div>
+            <div class="product-info-center">
+                <p class="product-description">{{ product.description }}</p>
+            </div>
+            <div class="product-info-bottom">
+                <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="quantity-container">
+                        Quantity: 
+                        <input class="quantity-input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Add to Bag">
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
+                </form>
+            </div>
+            
+        </div>    
+    </div>
+</div>
+{% endblock %}

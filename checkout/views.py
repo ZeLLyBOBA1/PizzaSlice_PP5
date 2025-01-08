@@ -1,7 +1,23 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from products.models import Product
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
+
+from .forms import OrderForm
+
+
 
 # Create your views here.
 def checkout(request):
-    """ A view to return the index page """
-    return render(request, 'checkout/cart.html',)
+    # bag = request.session.get('bag', {})
+    # if not bag:
+    #     messages.error(request, "There is nothing in your bag at the moment")
+    #     return redirect(reverse('products'))
+
+    order_form = OrderForm()
+    template = 'checkout/cart.html'
+    context = {
+        'order_form': order_form,
+    }
+
+
+
+    return render(request, template, context)

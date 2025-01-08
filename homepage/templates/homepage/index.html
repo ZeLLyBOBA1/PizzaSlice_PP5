@@ -5,15 +5,544 @@
 <style>
 .index-container{
     width: 100%;
-    height: 2000px;
+    min-height: 2000px;
     background-color: rgb(45,45,45);
     max-width: 1024px;
     margin: 6px auto;
     border-radius: 0.5rem;
 }
+
+nav {
+    margin: 1rem 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+section {
+    padding: 2rem;
+}
+
+.about {
+    background-color: rgb(40,40,40);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.about h2 {
+    font-size: 32px;
+    color: rgb(180,180,180);
+    text-align: center;
+}
+
+.about .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.about .card {
+    background-color: rgb(55,55,55);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about .card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.about .card h3 {
+    margin: 0.5rem 0;
+    color: rgb(180,180,180);
+}
+
+.about .card p {
+    font-size: 0.9rem;
+    color: rgb(150,150,150);
+}
+
+
+
+@media (max-width: 480px) {
+    .about .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about .card {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+}
+
+.contact {
+    background-color: rgb(35,35,35);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 70%;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.contact h2 {
+    color: rgb(180,180,180);
+    margin-bottom: 1rem;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: rgb(180,180,180);
+}
+
+.contact form input,
+.contact form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: rgb(40,40,40);
+    color: rgb(180,180,180);
+}
+
+.contact form textarea{
+    resize: none;
+}
+
+.contact form button {
+    background-color: rgb(60,60,60);
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact form button:hover {
+    background-color: rgb(65,65,65)
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+#hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:local;
+    background-position: top;
+    overflow: hidden;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.9),rgba(0,0,0,0.6)), url('https://res.cloudinary.com/dfmblewbm/image/upload/v1736347920/hero-image_nnil6t.png');
+}
+
+#hero-h2{
+    display: none;
+}
+
+/*hero section container styling*/
+#hero-section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/*slogan styling*/
+#slogan{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: start; 
+    row-gap: 0px;
+}
+
+#slogan a{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#slogan1{
+    background-color: rgb(210, 210, 210); 
+    border-radius: 10px 0px 0px 0px;
+    padding-right: 5px;
+}
+
+#slogan2{
+    background-color: rgb(70, 70, 70); 
+    color: rgb(210, 210, 210);
+    border-radius: 0px 10px 0px 0px; 
+}
+
+#slogan3{
+   background-color: rgb(210, 210, 210); 
+   border-radius: 0px 10px 10px 10px; 
+}
+
+/*hero text container styling*/
+#hero-text-container{
+    background-color: rgba(240, 248, 255, 0.1); 
+    backdrop-filter: blur(5px); 
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; 
+    padding: 0; 
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+/*changes background color, font-size etc. for order now button*/
+#order-now-button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(20, 206, 66, 0.5); 
+    border-radius: 5px;
+    align-self: flex-end;
+    text-decoration: none;
+    color: black;
+}
+
+#order-now-button:hover{
+    background-color: rgba(20, 206, 66, 0.7);
+}
+
+#typewriter{
+    animation: 1s infinite steps(1) blink;
+}
+
+/*typewriter animation*/
+@keyframes blink{
+    0%, 100%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+}
+
+/*media query for better experience*/
+@media(max-width:768px){
+    #hero{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+   
+}
+
+#gallery{
+    background-color: rgb(40,40,40); 
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+/*name of the section*/
+#gallery-header{
+    font-size: 40px;
+    color: rgb(170, 170, 170);
+}
+
+/*styling for gallery container*/
+#gallery-container{
+    width: 920px;
+    height: auto;
+    background-color: rgba(110, 110, 110, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*container with two images*/
+.two-image-container{
+    background-color: rgba(0, 0, 0, 0); 
+    height: 100%; 
+    width: 300px; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-direction: column;
+    gap: 10px;
+}
+
+.imageDiv{
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    width: 100%;
+}
+
+/*adds blur*/
+.blur-div{
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0px);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*blur on hover*/
+.blur-div:hover{
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*changes color of the comment*/
+.blur-div:hover  .comment{
+    color: rgb(240, 248, 255); 
+}
+
+/*comment styling*/
+.comment{
+    padding: 20px;
+    color: rgba(240, 248, 255, 0);
+    font-size: 20px;
+    transition: 0.5s;
+    border-style: solid;
+    border-width: 0 2px 0 2px;
+}
+
+/*gallery container styling*/
+#gallery-container2{
+    background-color: rgba(0, 0, 0, 0); 
+    height: 100%; 
+    width: 300px
+}
+
+/*image1 styling*/
+#image1{
+    height:245px;
+    border-radius: 20px;
+}
+
+/*image2 styling*/
+#image2{
+    height:245px; 
+    border-radius: 20px;
+}
+
+/*image3 styling*/
+#image3{
+    height: 500px;
+    border-radius: 20px;
+}
+
+/*image4 styling*/
+#image4{
+    height:245px;
+    border-radius: 20px;
+}
+
+/*image5 styling*/
+#image5{
+    height:245px;
+    border-radius: 20px;
+}
+
+/*media query for better experience*/
+@media(max-width:950px){
+    #gallery-container{
+        width: 92%;
+        flex-direction: column;
+        gap: 40px;
+    }
+    .two-image-container{
+        flex-direction: column;
+        width: 100%;
+        gap: 40px;
+    }
+    #gallery-container2{
+        width: 100%;
+    }
+    #image1, #image2, #image4, #image5{
+        height: 500px;
+    }
+    #image3{
+        height: 1000px;
+    }
+    
+}
+
+.info{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.location{
+    background-color: rgb(30,30,30);
+    color: rgb(180,180,180);
+    width: 30%;
+}
+
+.location-text{
+    padding: 10px;
+    background-color: rgb(40,40,40);
+    height: 15%;
+}
+
+iframe{
+    padding: 10px;
+}
+
+.contact-name, .contact-email{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-user-info{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
 </style>
 
 <div class="index-container">
-    
+    <section href="{% static 'images/hero-image.png' %}" id="hero">
+        <h2 id="hero-h2">hero</h2>
+        <div id="hero-section-container">
+            <div id="slogan">
+                <div style="display: flex;">
+                <a id="slogan1">Our mission</a>
+                <a id="slogan2">is</a>
+                </div>
+                <a id="slogan3">to make people happy</a>
+            </div>
+
+            <div id="hero-text-container">
+                <p style="color: rgb(210, 210, 210); padding: 5px;">Best pizza in Tralee<span id="typewriter">|</span></p>
+                <a id="order-now-button" href="/products/products/">Order Now</a>
+            </div>
+        </div>
+        
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="cards">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dfmblewbm/image/upload/v1736357995/our-story_bxckyw.jpg" alt="Our Story">
+                <h3>Our Story</h3>
+                <p>Learn about our journey, from a small family kitchen to a thriving pizzeria loved by the community.</p>
+            </div>
+            <div class="card">
+                <img src="https://res.cloudinary.com/dfmblewbm/image/upload/v1736358127/Fresh-ingridients_wnjp4o.jpg" alt="Fresh Ingredients">
+                <h3>Fresh Ingredients</h3>
+                <p>We source the freshest ingredients to ensure every bite is packed with flavor and quality.</p>
+            </div>
+            <div class="card">
+                <img src="https://res.cloudinary.com/dfmblewbm/image/upload/v1736358276/recipes_vpgnih.jpg" alt="Authentic Recipes">
+                <h3>Authentic Recipes</h3>
+                <p>Our recipes are passed down through generations, bringing you the true taste of Italy.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="info">
+        <div id="location" class="location">
+            <div id="location-text" class="location-text">
+                <h2>Our Location</h2>
+            </div>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d314.1357713608824!2d-9.706828853707368!3d52.269836014995725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4845357c9c399f39%3A0xb8ff7f9d5cf05795!2s28%20Bridge%20St%2C%20Tralee%2C%20Co.%20Kerry%2C%20V92%20N732%2C%20Ireland!5e0!3m2!1sen!2sus!4v1736358756364!5m2!1sen!2sus" 
+            width="100%" height="85%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            
+        </div>
+        
+        <div id="contact" class="contact">
+            <h2><strong>Contact Us</strong></h2>
+            <form action="#" method="post">
+                <div id="contact-user-info" class="contact-user-info">
+                    <div id="contact-name" class="contact-name">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div id="contact-email" class="contact-email">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <label for="message">Message:</label>
+                <textarea type="text" id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        
+    </section>
+
+    <section id="gallery">
+        <h1 id="gallery-header">
+            Memory Wall
+        </h1>
+        <div id="gallery-container">
+            <div id="gallery-container1" class="two-image-container">
+                <div id="image1" class="imageDiv" style="background-image: url(https://res.cloudinary.com/dfmblewbm/image/upload/v1736350639/image1_qy9fc1.jpg);">
+                    <div class="blur-div">
+                        <p class="comment">Best pizza in town! Always fresh and delicious</p>
+                    </div>
+                </div>
+                <div id="image2" class="imageDiv" style="background-image: url(https://res.cloudinary.com/dfmblewbm/image/upload/v1736350641/image2_a4indh.jpg);">
+                    <div class="blur-div">
+                        <p class="comment">Amazing variety of toppings and great service</p>
+                    </div>
+                </div>
+            </div>
+            <div id="gallery-container2">
+                <div id="image3" class="imageDiv" style="background-image: url(https://res.cloudinary.com/dfmblewbm/image/upload/v1736350645/image3_hlxtn0.jpg);">
+                    <div class="blur-div">
+                        <p class="comment">PizzaSlice is fantastic! They have a wide variety of fresh, delicious pizzas and excellent customer service. The staff is friendly, and the delivery is always prompt. Highly recommend for all pizza lovers!</p>
+                    </div>
+                </div>
+            </div>
+            <div id="gallery-container3" class="two-image-container">
+                <div id="image4" class="imageDiv" style="background-image: url(https://res.cloudinary.com/dfmblewbm/image/upload/v1736350647/image4_yq4dqv.jpg);">
+                    <div class="blur-div">
+                        <p class="comment">Fast delivery and the pizza arrives hot every time</p>
+                    </div>
+                </div>
+                <div id="image5" class="imageDiv" style="background-image: url(https://res.cloudinary.com/dfmblewbm/image/upload/v1736350650/image5_o3xsok.jpg);">
+                    <div class="blur-div">
+                        <p class="comment">Cozy atmosphere and friendly staff. Love this place!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
+
 {% endblock %}
