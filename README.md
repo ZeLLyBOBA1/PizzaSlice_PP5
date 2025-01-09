@@ -2,9 +2,9 @@
 
 ## Introduction
 
-![screenshot](documentation/readme/am-i-responsive.png)
+![screenshot](staticfiles/images/amiresponsive-pp5.png)
 
-### [PizzaSlice Live]()
+### [PizzaSlice Live](https://pizzaslice-9165a3105687.herokuapp.com/)
 
 ## About us
 
@@ -39,15 +39,22 @@
 
   ### User Goals
 
+  Users visiting a pizzeria website want a simple and enjoyable experience. They look for an easy way to browse the menu, customize their orders, and place them quickly for delivery or pickup. Many visitors need to find the nearest restaurant, check opening hours, or get contact details. Others are curious about the pizzeria’s story, values, and ingredients. Deals, promotions, and loyalty rewards are also important for customers looking to save money. Quick answers to questions about dietary options or catering services are a must, along with a smooth mobile experience. For delivery, users appreciate being able to track their orders, and many rely on reviews or recommendations to choose the best dishes.
+
   ### Owner Goals
+
+  The goals of the owner for their website are focused on creating a platform that attracts customers, drives sales, and enhances their brand presence. The owner wants the site to make it easy for users to browse the menu, customize orders, and complete purchases, ensuring a seamless and satisfying experience. A strong emphasis is placed on showcasing the quality of the food, the story behind the brand, and the unique selling points of the pizzeria. The website should also promote special offers, loyalty programs, and catering services to encourage repeat business and larger orders. For dine-in locations, the owner wants users to easily find directions, contact details, and hours of operation. Additionally, integrating features like online order tracking and feedback collection helps build trust and improve customer satisfaction. Ultimately, the website serves as a key tool to strengthen the pizzeria’s reputation, increase revenue, and establish lasting connections with customers.
 
   ### Admin Goals
 
+  The goals of the website administrator focus on maintaining a functional, user-friendly, and efficient platform. Administrators need the website to be easy to update, allowing them to manage the menu, prices, and promotions without technical difficulties. They want tools to track orders, monitor customer feedback, and manage delivery or pickup requests smoothly. Ensuring the site runs smoothly across all devices, particularly mobile, is essential for providing a consistent experience. Administrators also aim to gather insights through analytics, such as tracking user behavior, popular menu items, and sales trends, to make informed business decisions. Security is another priority, as they need to protect customer data and payment information. Ultimately, the admin's goal is to ensure the website supports the pizzeria’s growth by being reliable, easy to use, and adaptable to changing needs.
 
 [Go upwards ⇧](#content)
 
 
 ## Audience
+
+The target audience for the pizzeria website includes a wide range of people who enjoy delicious, freshly made food and value convenience. This includes families looking for an easy dinner solution, busy professionals ordering lunch or dinner on the go, and groups of friends planning a casual get-together. Pizza lovers of all ages are a key audience, from kids craving classic pepperoni to foodies seeking gourmet or specialty options like vegetarian or seafood pizzas. The site also caters to health-conscious individuals by offering customization options and dietary-friendly choices, such as gluten-free or vegan pizzas. Additionally, the website appeals to party planners or event organizers who need catering services for birthdays, office gatherings, or celebrations. Whether they’re dining in, picking up, or ordering delivery, the audience is united by a love for great food, convenience, and a high-quality experience.
 
 [Go upwards ⇧](#content)
 
@@ -72,7 +79,7 @@ I used GitHub Projects to organize and track my development progress. This helpe
 
 <details>
 
-![screenshot](documentation/readme/github_projects.png)
+![screenshot](staticfiles/images/github-projects.png)
 
 **<summary>GitHub Projects Image</summary>**
 
