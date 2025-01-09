@@ -102,6 +102,30 @@
     border-width: 2px;
 }
 
+.remove-item, .update-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-item:hover{
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.update-link:hover{
+    background-color: rgba(229, 157, 32, 0.6);
+}
+
+.update-link{
+    background-color: rgb(229, 157, 32);
+}
+
+.remove-item{
+    background-color: red;
+}
+
 .input-group{
     display: flex;
 }
@@ -129,19 +153,32 @@
                         <div class="item-price-and-quantity">
                             <p class="item-price">{{ item.product.price }}$</p>
                             <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px" fill="rgb(120,120,120)"><path d="M480-80q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-155.5t86-127Q252-817 325-848.5T480-880q83 0 155.5 31.5t127 86q54.5 54.5 86 127T880-480q0 82-31.5 155t-86 127.5q-54.5 54.5-127 86T480-80Zm0-160q100 0 170-70t70-170q0-100-70-170t-170-70q-100 0-170 70t-70 170q0 100 70 170t170 70Z"/></svg>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button class="decrement-qty" data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
-                                        <svg class="decrement-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-440v-80h560v80H200Z"/></svg>
-                                    </button>
+                            <form class="update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}" >
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button class="decrement-qty" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                            <svg class="decrement-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-440v-80h560v80H200Z"/></svg>
+                                        </button>
+                                    </div>
+                                    <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                    <div class="input-group-append">
+                                        <button class="increment-qty" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                            <svg class="increment-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
+                                        </button>
+                                    </div>
                                 </div>
-                                <input class="quantity-input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="30" id="id_qty_30">
-                                <div class="input-group-append">
-                                    <button class="increment-qty" data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                        <svg class="increment-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg>
-                                    </button>
-                                </div>
-                            </div>
+                            </form>
+                            <a class="update-link">
+                                <svg class="save-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                                    <path d="M840-680v480q0 33-23.5 56.5T760-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h480l160 160Zm-80 34L646-760H200v560h560v-446ZM480-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM240-560h360v-160H240v160Zm-40-86v446-560 114Z"/>
+                                </svg>
+                            </a>
+                            <a class="remove-item" id="remove_{{ item.item_id }}" >
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000">
+                                    <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/>
+                                </svg>
+                            </a>
                         </div>       
                     </div>
                 </div>
@@ -151,4 +188,31 @@
         <p>Your bag is empty</p>
     {% endif %}
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity-input-script.html' %}
+
+<script type="text/javascript">
+    //Update quantity on click
+    $('.update-link').click(function(e){
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    //Remove item
+    $('.remove-item').click(function(e){
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/bag/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+
+        $.post(url, data)
+         .done(function(){
+            location.reload();
+         });    
+    })
+</script>
 {% endblock %}
