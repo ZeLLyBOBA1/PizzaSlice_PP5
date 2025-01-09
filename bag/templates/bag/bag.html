@@ -10,6 +10,7 @@
     max-width: 1024px;
     margin: 6px auto;
     border-radius: 0.5rem;
+    padding-top: 10px ;
 }
 
 .bag-item{
@@ -130,13 +131,23 @@
     display: flex;
 }
 
+.bag-empty{
+    background-color: rgb(35, 35, 35);
+    color: rgb(180,180,180);
+    font-size: 32px;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 100px auto 0 auto;
+}
+
 </style>
 
 <div class="bag-container">
     {% if bag_items %}
     <div class="checkout-container">
         Subtotal: {{ total }}
-        <button>Checkout</button>
+        <a href="{% url 'checkout' %}">Checkout</a>
     </div>
     <hr style="border: none; height: 2px; background-color: rgb(75, 75, 75);">
         <div id="bag-items-container" class="bag-items-container">
@@ -185,7 +196,7 @@
             {% endfor %}      
         </div>
     {% else %}
-        <p>Your bag is empty</p>
+        <p class="bag-empty">Your bag is empty</p>
     {% endif %}
 </div>
 {% endblock %}
@@ -205,9 +216,8 @@
     $('.remove-item').click(function(e){
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
          .done(function(){
